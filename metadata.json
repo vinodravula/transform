@@ -1,0 +1,12 @@
+{
+  "iteratorPath": "$.persons.person",
+  "delimiter": "|",
+  "mappings": [
+    { "inputPath": "name", "outputPath": "fullName" },
+    { "inputPath": "id", "outputPath": "personId" },
+    { "inputPaths": ["address.street", "address.zip"], "outputPath": "fullAddress" },
+    { "inputPath": "orders.order", "outputPath": "orderList" },
+    { "constant": "SYSTEM", "outputPath": "source" },
+    { "condition": "$.status == 'active'", "inputPath": "id", "outputPath": "activeUserId" }
+  ]
+}

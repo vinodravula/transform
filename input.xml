@@ -1,0 +1,46 @@
+<root>
+    <persons>
+        <person>
+            <name>John Doe</name>
+            <id>12345</id>
+            <status>active</status>
+            <orders>
+                <order>item1</order>
+                <order>item2</order>
+            </orders>
+            <address>
+                <street>Main Street</street>
+                <zip>12345</zip>
+            </address>
+            <countryCode>US</countryCode>
+        </person>
+        <person>
+            <name>John Doe</name>
+            <id>12345</id>
+            <status>active</status>
+            <orders>
+                <order>item1</order>
+                <order>item2</order>
+            </orders>
+            <address>
+                <street>Main Street</street>
+                <zip>12345</zip>
+            </address>
+            <countryCode>US</countryCode>
+        </person>
+        <person>
+            <name>John Doe</name>
+            <id>12345</id>
+            <status>active</status>
+            <orders>
+                <order>item1</order>
+                <order>item2</order>
+            </orders>
+            <address>
+                <street>Main Street</street>
+                <zip>12345</zip>
+            </address>
+            <countryCode>US</countryCode>
+        </person>
+    </persons>
+</root>
