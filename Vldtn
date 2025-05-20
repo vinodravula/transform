@@ -1,0 +1,41 @@
+import java.io.*;
+import java.util.*;
+
+public class PipeFileValidator {
+    public static void main(String[] args) throws IOException {
+        File file = new File("data.txt");
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+            String line;
+            int lineCount = 0;
+            int dataCount = 0;
+
+            while ((line = reader.readLine()) != null) {
+                lineCount++;
+                String[] parts = line.split("\\|", -1);
+
+                if (line.startsWith("HDR")) {
+                    if (parts.length != 4) throw new RuntimeException("Invalid header field count");
+                    if (!parts[2].matches("\\d{8}")) throw new RuntimeException("Invalid date in header");
+                } else if (line.startsWith("DAT")) {
+                    if (parts.length != 4) throw new RuntimeException("Invalid data line at row " + lineCount);
+                    if (!parts[2].matches("\\d+")) throw new RuntimeException("Invalid ID at line " + lineCount);
+                    if (!parts[3].equals("active") && !parts[3].equals("inactive")) {
+                        throw new RuntimeException("Invalid status at line " + lineCount);
+                    }
+                    dataCount++;
+                } else if (line.startsWith("FTR")) {
+                    if (parts.length != 2) throw new RuntimeException("Invalid footer field count");
+                    int expectedCount = Integer.parseInt(parts[1]);
+                    if (expectedCount != dataCount) {
+                        throw new RuntimeException("Footer record count mismatch: expected " + expectedCount + " but found " + dataCount);
+                    }
+                } else {
+                    throw new RuntimeException("Unknown line type at row " + lineCount);
+                }
+            }
+        }
+
+        System.out.println("File is valid!");
+    }
+}
