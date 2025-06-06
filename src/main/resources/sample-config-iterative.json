@@ -1,0 +1,56 @@
+{
+  "type": "delimited",
+  "delimiter": ",",
+  "repeatingElementConfig": {
+    "baseXpath": "/root/items/item",
+    "fields": [
+      {
+        "name": "TransactionID",
+        "sourceXpath": "/root/transactionId",
+        "placeholderValue": "NO_TXN_ID"
+      },
+      {
+        "name": "ItemSKU",
+        "sourceXpath": "sku",
+        "placeholderValue": "NO_SKU"
+      },
+      {
+        "name": "ItemName",
+        "sourceXpath": "name",
+        "stringOperations": [
+          { "type": "UPPERCASE" }
+        ]
+      },
+      {
+        "name": "Quantity",
+        "sourceXpath": "quantity"
+      },
+      {
+        "name": "Price",
+        "sourceXpath": "price"
+      },
+      {
+        "name": "Availability",
+        "placeholderValue": "UNKNOWN",
+        "conditionSourceXpath": "status",
+        "conditionExpectedValue": "ACTIVE",
+        "valueIfConditionMetConstant": "In Stock",
+        "valueIfConditionNotMetConstant": "Out of Stock"
+      },
+      {
+        "name": "DiscountApplied",
+        "sourceXpath": "/root/globalDiscount",
+        "placeholderValue": "0"
+      }
+    ]
+  },
+  "fields": [
+    { "name": "TransactionID", "length": 10 },
+    { "name": "ItemSKU", "length": 10 },
+    { "name": "ItemName", "length": 20 },
+    { "name": "Quantity", "length": 5 },
+    { "name": "Price", "length": 10 },
+    { "name": "Availability", "length": 12 },
+    { "name": "DiscountApplied", "length": 5 }
+  ]
+}

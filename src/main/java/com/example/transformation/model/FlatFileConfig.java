@@ -6,7 +6,17 @@ import java.util.Map;
 public class FlatFileConfig {
     private String type; // "fixed-width" or "delimited"
     private String delimiter; // e.g., ",", "|", etc. (only for delimited)
+
+    // Top-level fields: Used if no H-B-T structure is defined, or for overall file properties.
+    // If BodyConfig is used, these top-level fields are generally for defining the *order* and *fixed-width lengths*
+    // for fields that appear in header, body, or tail lines. Their XPaths might be ignored if HBT is active.
     private List<FieldConfig> fields;
+
+    private HeaderConfig headerConfig;
+    private BodyConfig bodyConfig;
+    private TailConfig tailConfig;
+    // Removed: private RepeatingElementConfig repeatingElementConfig; (Replaced by BodyConfig)
+
 
     public static class FieldConfig {
         private String name;
@@ -168,5 +178,29 @@ public class FlatFileConfig {
 
     public void setFields(List<FieldConfig> fields) {
         this.fields = fields;
+    }
+
+    public HeaderConfig getHeaderConfig() {
+        return headerConfig;
+    }
+
+    public void setHeaderConfig(HeaderConfig headerConfig) {
+        this.headerConfig = headerConfig;
+    }
+
+    public BodyConfig getBodyConfig() {
+        return bodyConfig;
+    }
+
+    public void setBodyConfig(BodyConfig bodyConfig) {
+        this.bodyConfig = bodyConfig;
+    }
+
+    public TailConfig getTailConfig() {
+        return tailConfig;
+    }
+
+    public void setTailConfig(TailConfig tailConfig) {
+        this.tailConfig = tailConfig;
     }
 }
