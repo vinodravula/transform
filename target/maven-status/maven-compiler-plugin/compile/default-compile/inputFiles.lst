@@ -1,0 +1,13 @@
+/app/src/main/java/com/example/transformation/config/OpenAPIConfig.java
+/app/src/main/java/com/example/transformation/model/BodyConfig.java
+/app/src/main/java/com/example/transformation/service/TransformationService.java
+/app/src/main/java/com/example/transformation/model/FlatFileConfig.java
+/app/src/main/java/com/example/transformation/model/HeaderConfig.java
+/app/src/main/java/com/example/transformation/controller/TransformationController.java
+/app/src/main/java/com/example/transformation/model/ValidationConfig.java
+/app/src/main/java/com/example/transformation/model/TailConfig.java
+/app/src/main/java/com/example/transformation/model/SplitConfig.java
+/app/src/main/java/com/example/transformation/model/StringOperationConfig.java
+/app/src/main/java/com/example/transformation/model/FieldConfig.java
+/app/src/main/java/com/example/transformation/controller/GlobalExceptionHandler.java
+/app/src/main/java/com/example/MySpringBootAppApplication.java

@@ -1,0 +1,27 @@
+<root>
+    <transactionId>TXN12345</transactionId>
+    <items>
+        <item>
+            <sku>SKU001</sku>
+            <name>Product Alpha</name>
+            <quantity>2</quantity>
+            <price>10.00</price>
+            <status>ACTIVE</status>
+        </item>
+        <item>
+            <sku>SKU002</sku>
+            <name>Product Beta</name>
+            <quantity>1</quantity>
+            <price>25.50</price>
+            <status>INACTIVE</status>
+        </item>
+        <item>
+            <sku>SKU003</sku>
+            <name>Widget Gamma</name>
+            <quantity>5</quantity>
+            <price>7.25</price>
+            <status>ACTIVE</status>
+        </item>
+    </items>
+    <globalDiscount>0.05</globalDiscount>
+</root>

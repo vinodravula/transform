@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.example.transformation.service.TransformationServiceTest" time="1.129" tests="31" errors="0" skipped="0" failures="5">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/app/target/test-classes:/app/target/classes:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-starter-web/2.7.5/spring-boot-starter-web-2.7.5.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-starter/2.7.5/spring-boot-starter-2.7.5.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot/2.7.5/spring-boot-2.7.5.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.7.5/spring-boot-autoconfigure-2.7.5.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.7.5/spring-boot-starter-logging-2.7.5.jar:/home/swebot/.m2/repository/ch/qos/logback/logback-classic/1.2.11/logback-classic-1.2.11.jar:/home/swebot/.m2/repository/ch/qos/logback/logback-core/1.2.11/logback-core-1.2.11.jar:/home/swebot/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.17.2/log4j-to-slf4j-2.17.2.jar:/home/swebot/.m2/repository/org/apache/logging/log4j/log4j-api/2.17.2/log4j-api-2.17.2.jar:/home/swebot/.m2/repository/org/slf4j/jul-to-slf4j/1.7.36/jul-to-slf4j-1.7.36.jar:/home/swebot/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/home/swebot/.m2/repository/org/yaml/snakeyaml/1.30/snakeyaml-1.30.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-starter-json/2.7.5/spring-boot-starter-json-2.7.5.jar:/home/swebot/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.13.4/jackson-datatype-jdk8-2.13.4.jar:/home/swebot/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.13.4/jackson-datatype-jsr310-2.13.4.jar:/home/swebot/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.13.4/jackson-module-parameter-names-2.13.4.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/2.7.5/spring-boot-starter-tomcat-2.7.5.jar:/home/swebot/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.68/tomcat-embed-core-9.0.68.jar:/home/swebot/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.68/tomcat-embed-el-9.0.68.jar:/home/swebot/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.68/tomcat-embed-websocket-9.0.68.jar:/home/swebot/.m2/repository/org/springframework/spring-web/5.3.23/spring-web-5.3.23.jar:/home/swebot/.m2/repository/org/springframework/spring-beans/5.3.23/spring-beans-5.3.23.jar:/home/swebot/.m2/repository/org/springframework/spring-webmvc/5.3.23/spring-webmvc-5.3.23.jar:/home/swebot/.m2/repository/org/springframework/spring-aop/5.3.23/spring-aop-5.3.23.jar:/home/swebot/.m2/repository/org/springframework/spring-context/5.3.23/spring-context-5.3.23.jar:/home/swebot/.m2/repository/org/springframework/spring-expression/5.3.23/spring-expression-5.3.23.jar:/home/swebot/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2.jar:/home/swebot/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.4/jackson-annotations-2.13.4.jar:/home/swebot/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.4/jackson-core-2.13.4.jar:/home/swebot/.m2/repository/com/fasterxml/woodstox/woodstox-core/6.5.0/woodstox-core-6.5.0.jar:/home/swebot/.m2/repository/org/codehaus/woodstox/stax2-api/4.2.1/stax2-api-4.2.1.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-starter-test/2.7.5/spring-boot-starter-test-2.7.5.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-test/2.7.5/spring-boot-test-2.7.5.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/2.7.5/spring-boot-test-autoconfigure-2.7.5.jar:/home/swebot/.m2/repository/com/jayway/jsonpath/json-path/2.7.0/json-path-2.7.0.jar:/home/swebot/.m2/repository/net/minidev/json-smart/2.4.8/json-smart-2.4.8.jar:/home/swebot/.m2/repository/net/minidev/accessors-smart/2.4.8/accessors-smart-2.4.8.jar:/home/swebot/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar:/home/swebot/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/swebot/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/home/swebot/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/home/swebot/.m2/repository/org/assertj/assertj-core/3.22.0/assertj-core-3.22.0.jar:/home/swebot/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/swebot/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/home/swebot/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/home/swebot/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/swebot/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/home/swebot/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/swebot/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/home/swebot/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/home/swebot/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/home/swebot/.m2/repository/org/mockito/mockito-core/4.5.1/mockito-core-4.5.1.jar:/home/swebot/.m2/repository/net/bytebuddy/byte-buddy/1.12.18/byte-buddy-1.12.18.jar:/home/swebot/.m2/repository/net/bytebuddy/byte-buddy-agent/1.12.18/byte-buddy-agent-1.12.18.jar:/home/swebot/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/swebot/.m2/repository/org/mockito/mockito-junit-jupiter/4.5.1/mockito-junit-jupiter-4.5.1.jar:/home/swebot/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/home/swebot/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/swebot/.m2/repository/org/springframework/spring-core/5.3.23/spring-core-5.3.23.jar:/home/swebot/.m2/repository/org/springframework/spring-jcl/5.3.23/spring-jcl-5.3.23.jar:/home/swebot/.m2/repository/org/springframework/spring-test/5.3.23/spring-test-5.3.23.jar:/home/swebot/.m2/repository/org/xmlunit/xmlunit-core/2.9.0/xmlunit-core-2.9.0.jar:/home/swebot/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.3.0/springdoc-openapi-starter-webmvc-ui-2.3.0.jar:/home/swebot/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.3.0/springdoc-openapi-starter-webmvc-api-2.3.0.jar:/home/swebot/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.3.0/springdoc-openapi-starter-common-2.3.0.jar:/home/swebot/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.19/swagger-core-jakarta-2.2.19.jar:/home/swebot/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/swebot/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.19/swagger-annotations-jakarta-2.2.19.jar:/home/swebot/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.19/swagger-models-jakarta-2.2.19.jar:/home/swebot/.m2/repository/jakarta/validation/jakarta.validation-api/2.0.2/jakarta.validation-api-2.0.2.jar:/home/swebot/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.13.4/jackson-dataformat-yaml-2.13.4.jar:/home/swebot/.m2/repository/org/webjars/swagger-ui/5.10.3/swagger-ui-5.10.3.jar:"/>
+    <property name="java.vm.vendor" value="Ubuntu"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://ubuntu.com/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
+    <property name="sun.java.command" value="/app/target/surefire/surefirebooter11705720315690670566.jar /app/target/surefire 2025-06-06T02-48-51_793-jvmRun1 surefire4457797824890372167tmp surefire_013205963106520843222tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="com.example.transformation.service.TransformationServiceTest"/>
+    <property name="surefire.test.class.path" value="/app/target/test-classes:/app/target/classes:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-starter-web/2.7.5/spring-boot-starter-web-2.7.5.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-starter/2.7.5/spring-boot-starter-2.7.5.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot/2.7.5/spring-boot-2.7.5.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.7.5/spring-boot-autoconfigure-2.7.5.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.7.5/spring-boot-starter-logging-2.7.5.jar:/home/swebot/.m2/repository/ch/qos/logback/logback-classic/1.2.11/logback-classic-1.2.11.jar:/home/swebot/.m2/repository/ch/qos/logback/logback-core/1.2.11/logback-core-1.2.11.jar:/home/swebot/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.17.2/log4j-to-slf4j-2.17.2.jar:/home/swebot/.m2/repository/org/apache/logging/log4j/log4j-api/2.17.2/log4j-api-2.17.2.jar:/home/swebot/.m2/repository/org/slf4j/jul-to-slf4j/1.7.36/jul-to-slf4j-1.7.36.jar:/home/swebot/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/home/swebot/.m2/repository/org/yaml/snakeyaml/1.30/snakeyaml-1.30.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-starter-json/2.7.5/spring-boot-starter-json-2.7.5.jar:/home/swebot/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.13.4/jackson-datatype-jdk8-2.13.4.jar:/home/swebot/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.13.4/jackson-datatype-jsr310-2.13.4.jar:/home/swebot/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.13.4/jackson-module-parameter-names-2.13.4.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/2.7.5/spring-boot-starter-tomcat-2.7.5.jar:/home/swebot/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.68/tomcat-embed-core-9.0.68.jar:/home/swebot/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.68/tomcat-embed-el-9.0.68.jar:/home/swebot/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.68/tomcat-embed-websocket-9.0.68.jar:/home/swebot/.m2/repository/org/springframework/spring-web/5.3.23/spring-web-5.3.23.jar:/home/swebot/.m2/repository/org/springframework/spring-beans/5.3.23/spring-beans-5.3.23.jar:/home/swebot/.m2/repository/org/springframework/spring-webmvc/5.3.23/spring-webmvc-5.3.23.jar:/home/swebot/.m2/repository/org/springframework/spring-aop/5.3.23/spring-aop-5.3.23.jar:/home/swebot/.m2/repository/org/springframework/spring-context/5.3.23/spring-context-5.3.23.jar:/home/swebot/.m2/repository/org/springframework/spring-expression/5.3.23/spring-expression-5.3.23.jar:/home/swebot/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.13.4.2/jackson-databind-2.13.4.2.jar:/home/swebot/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.4/jackson-annotations-2.13.4.jar:/home/swebot/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.13.4/jackson-core-2.13.4.jar:/home/swebot/.m2/repository/com/fasterxml/woodstox/woodstox-core/6.5.0/woodstox-core-6.5.0.jar:/home/swebot/.m2/repository/org/codehaus/woodstox/stax2-api/4.2.1/stax2-api-4.2.1.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-starter-test/2.7.5/spring-boot-starter-test-2.7.5.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-test/2.7.5/spring-boot-test-2.7.5.jar:/home/swebot/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/2.7.5/spring-boot-test-autoconfigure-2.7.5.jar:/home/swebot/.m2/repository/com/jayway/jsonpath/json-path/2.7.0/json-path-2.7.0.jar:/home/swebot/.m2/repository/net/minidev/json-smart/2.4.8/json-smart-2.4.8.jar:/home/swebot/.m2/repository/net/minidev/accessors-smart/2.4.8/accessors-smart-2.4.8.jar:/home/swebot/.m2/repository/org/ow2/asm/asm/9.1/asm-9.1.jar:/home/swebot/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar:/home/swebot/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/home/swebot/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/home/swebot/.m2/repository/org/assertj/assertj-core/3.22.0/assertj-core-3.22.0.jar:/home/swebot/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/swebot/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/home/swebot/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/home/swebot/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/swebot/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/home/swebot/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/swebot/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/home/swebot/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/home/swebot/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/home/swebot/.m2/repository/org/mockito/mockito-core/4.5.1/mockito-core-4.5.1.jar:/home/swebot/.m2/repository/net/bytebuddy/byte-buddy/1.12.18/byte-buddy-1.12.18.jar:/home/swebot/.m2/repository/net/bytebuddy/byte-buddy-agent/1.12.18/byte-buddy-agent-1.12.18.jar:/home/swebot/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/home/swebot/.m2/repository/org/mockito/mockito-junit-jupiter/4.5.1/mockito-junit-jupiter-4.5.1.jar:/home/swebot/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/home/swebot/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/swebot/.m2/repository/org/springframework/spring-core/5.3.23/spring-core-5.3.23.jar:/home/swebot/.m2/repository/org/springframework/spring-jcl/5.3.23/spring-jcl-5.3.23.jar:/home/swebot/.m2/repository/org/springframework/spring-test/5.3.23/spring-test-5.3.23.jar:/home/swebot/.m2/repository/org/xmlunit/xmlunit-core/2.9.0/xmlunit-core-2.9.0.jar:/home/swebot/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.3.0/springdoc-openapi-starter-webmvc-ui-2.3.0.jar:/home/swebot/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.3.0/springdoc-openapi-starter-webmvc-api-2.3.0.jar:/home/swebot/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.3.0/springdoc-openapi-starter-common-2.3.0.jar:/home/swebot/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.19/swagger-core-jakarta-2.2.19.jar:/home/swebot/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/home/swebot/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.19/swagger-annotations-jakarta-2.2.19.jar:/home/swebot/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.19/swagger-models-jakarta-2.2.19.jar:/home/swebot/.m2/repository/jakarta/validation/jakarta.validation-api/2.0.2/jakarta.validation-api-2.0.2.jar:/home/swebot/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.13.4/jackson-dataformat-yaml-2.13.4.jar:/home/swebot/.m2/repository/org/webjars/swagger-ui/5.10.3/swagger-ui-5.10.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/swebot"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-04-15"/>
+    <property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/app"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/app/target/surefire/surefirebooter11705720315690670566.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.7+6-Ubuntu-0ubuntu124.04"/>
+    <property name="user.name" value="jules"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.8.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/home/swebot/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="21.0.7"/>
+    <property name="user.dir" value="/app"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Ubuntu"/>
+    <property name="java.vm.version" value="21.0.7+6-Ubuntu-0ubuntu124.04"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="testConditionalMapping_ConditionMet_XPathValue" classname="com.example.transformation.service.TransformationServiceTest" time="0.49"/>
+  <testcase name="testHierarchicalProcessing_ValidCount" classname="com.example.transformation.service.TransformationServiceTest" time="0.066">
+    <failure message="expected: &lt;BCH001    10/26/2023SystemA                                                                     &#10;                    R001    Value for record 1  100.50                                            &#10;                    R002    Value for record 2  75.00                                             &#10;                    R003    Another value for re120.25                                            &#10;                                                3    FINAL     NOT_VALIDATED&gt; but was: &lt;BCH001    10/26/2023SystemA                                                                       &#10;                              R001    Value for record 1  100.50                                  &#10;                              R002    Value for record 2  75.00                                   &#10;                              R003    Another value for re120.25                                  &#10;                                                                    3    FINAL     NOT_VALIDATED  &gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError:
+expected: <BCH001    10/26/2023SystemA
+                    R001    Value for record 1  100.50
+                    R002    Value for record 2  75.00
+                    R003    Another value for re120.25
+                                                3    FINAL     NOT_VALIDATED> but was: <BCH001    10/26/2023SystemA
+                              R001    Value for record 1  100.50
+                              R002    Value for record 2  75.00
+                              R003    Another value for re120.25
+                                                                    3    FINAL     NOT_VALIDATED  >
+	at com.example.transformation.service.TransformationServiceTest.testHierarchicalProcessing_ValidCount(TransformationServiceTest.java:645)
+]]></failure>
+    <system-out><![CDATA[02:48:53.418 [main] INFO com.example.transformation.service.TransformationService - Initializing TransformationService
+02:48:53.420 [main] DEBUG com.example.transformation.service.TransformationService - DocumentBuilderFactory configured for secure parsing.
+02:48:53.425 [main] DEBUG com.example.transformation.service.TransformationService - Attempting to parse XML data. Length: 834
+02:48:53.427 [main] DEBUG com.example.transformation.service.TransformationService - XML data parsed successfully.
+02:48:53.427 [main] INFO com.example.transformation.service.TransformationService - Starting flat file generation process.
+02:48:53.444 [main] DEBUG com.example.transformation.service.TransformationService - Using JSON configuration: {
+  "type": "fixed-width",
+  "fields": [
+    { "name": "BatchID", "length": 10 },
+    { "name": "CreationDate", "length": 10 },
+    { "name": "SourceSystem", "length": 10 },
+    { "name": "RecordID", "length": 8 },
+    { "name": "RecordData", "length": 20 },
+    { "name": "RecordAmount", "length": 10 },
+    { "name": "FooterRecordCount", "length": 5 },
+    { "name": "FooterSummaryCode", "length": 10 },
+    { "name": "ValidationStatus", "length": 15 }
+  ],
+  "headerConfig": {
+    "fields": [
+      {
+        "name": "BatchID",
+        "sourceXpath": "/transactionBatch/batchHeader/batchId"
+      },
+      {
+        "name": "CreationDate",
+        "sourceXpath": "/transactionBatch/batchHeader/creationDate",
+        "sourceDateFormat": "yyyy-MM-dd'T'HH:mm:ss",
+        "targetDateFormat": "MM/dd/yyyy"
+      },
+      {
+        "name": "SourceSystem",
+        "sourceXpath": "/transactionBatch/batchHeader/sourceSystem"
+      }
+    ]
+  },
+  "bodyConfig": {
+    "baseXpath": "/transactionBatch/records/record",
+    "countFieldAlias": "processedRecordCount",
+    "fields": [
+      {
+        "name": "RecordID",
+        "sourceXpath": "id"
+      },
+      {
+        "name": "RecordData",
+        "sourceXpath": "data"
+      },
+      {
+        "name": "RecordAmount",
+        "sourceXpath": "amount"
+      }
+    ]
+  },
+  "tailConfig": {
+    "fields": [
+      {
+        "name": "FooterRecordCount",
+        "sourceXpath": "/transactionBatch/batchFooter/totalRecords"
+      },
+      {
+        "name": "FooterSummaryCode",
+        "sourceXpath": "/transactionBatch/batchFooter/summaryCode"
+      },
+      {
+        "name": "ValidationStatus",
+        "placeholderValue": "NOT_VALIDATED"
+      }
+    ],
+    "validationConfig": {
+      "countSourceField": "FooterRecordCount",
+      "expectedCountAlias": "processedRecordCount"
+    }
+  }
+}
+
+02:48:53.445 [main] DEBUG com.example.transformation.service.TransformationService - Processing header...
+02:48:53.445 [main] DEBUG com.example.transformation.service.TransformationService - Generating single line. Context node type: DeferredDocumentImpl, Number of specific field definitions: 3
+02:48:53.457 [main] DEBUG com.example.transformation.service.TransformationService - Processing body with baseXpath: /transactionBatch/records/record
+02:48:53.459 [main] DEBUG com.example.transformation.service.TransformationService - Found 3 body elements.
+02:48:53.459 [main] DEBUG com.example.transformation.service.TransformationService - Stored body count 3 with alias 'processedRecordCount'
+02:48:53.459 [main] DEBUG com.example.transformation.service.TransformationService - Generating single line. Context node type: DeferredElementImpl, Number of specific field definitions: 3
+02:48:53.462 [main] DEBUG com.example.transformation.service.TransformationService - Generating single line. Context node type: DeferredElementImpl, Number of specific field definitions: 3
+02:48:53.465 [main] DEBUG com.example.transformation.service.TransformationService - Generating single line. Context node type: DeferredElementImpl, Number of specific field definitions: 3
+02:48:53.467 [main] DEBUG com.example.transformation.service.TransformationService - Processing tail...
+02:48:53.467 [main] DEBUG com.example.transformation.service.TransformationService - Generating single line. Context node type: DeferredDocumentImpl, Number of specific field definitions: 3
+02:48:53.470 [main] INFO com.example.transformation.service.TransformationService - VALIDATION PASSED: Tail count matches actual processed body record count (3).
+02:48:53.471 [main] INFO com.example.transformation.service.TransformationService - Flat file generation completed in 44 ms. Header lines: 1, Body lines: 3, Tail lines: 1
+]]></system-out>
+  </testcase>
+  <testcase name="testDirectMapping_FixedWidth_Truncation" classname="com.example.transformation.service.TransformationServiceTest" time="0.027"/>
+  <testcase name="testStringOperations_AllInSequence" classname="com.example.transformation.service.TransformationServiceTest" time="0.021"/>
+  <testcase name="testDateFormatting_EmptySourceDate" classname="com.example.transformation.service.TransformationServiceTest" time="0.013"/>
+  <testcase name="testHierarchicalProcessing_MismatchedCount" classname="com.example.transformation.service.TransformationServiceTest" time="0.067">
+    <failure message="expected: &lt;BCH001    10/26/2023SystemA                                                                     &#10;                    R001    Value for record 1  100.50                                            &#10;                    R002    Value for record 2  75.00                                             &#10;                    R003    Another value for re120.25                                            &#10;                                                2    FINAL     NOT_VALIDATED&gt; but was: &lt;BCH001    10/26/2023SystemA                                                                       &#10;                              R001    Value for record 1  100.50                                  &#10;                              R002    Value for record 2  75.00                                   &#10;                              R003    Another value for re120.25                                  &#10;                                                                    2    FINAL     NOT_VALIDATED  &gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError:
+expected: <BCH001    10/26/2023SystemA
+                    R001    Value for record 1  100.50
+                    R002    Value for record 2  75.00
+                    R003    Another value for re120.25
+                                                2    FINAL     NOT_VALIDATED> but was: <BCH001    10/26/2023SystemA
+                              R001    Value for record 1  100.50
+                              R002    Value for record 2  75.00
+                              R003    Another value for re120.25
+                                                                    2    FINAL     NOT_VALIDATED  >
+	at com.example.transformation.service.TransformationServiceTest.testHierarchicalProcessing_MismatchedCount(TransformationServiceTest.java:672)
+]]></failure>
+    <system-out><![CDATA[02:48:53.550 [main] INFO com.example.transformation.service.TransformationService - Initializing TransformationService
+02:48:53.553 [main] DEBUG com.example.transformation.service.TransformationService - DocumentBuilderFactory configured for secure parsing.
+02:48:53.555 [main] DEBUG com.example.transformation.service.TransformationService - Attempting to parse XML data. Length: 834
+02:48:53.557 [main] DEBUG com.example.transformation.service.TransformationService - XML data parsed successfully.
+02:48:53.558 [main] INFO com.example.transformation.service.TransformationService - Starting flat file generation process.
+02:48:53.566 [main] DEBUG com.example.transformation.service.TransformationService - Using JSON configuration: {
+  "type": "fixed-width",
+  "fields": [
+    { "name": "BatchID", "length": 10 },
+    { "name": "CreationDate", "length": 10 },
+    { "name": "SourceSystem", "length": 10 },
+    { "name": "RecordID", "length": 8 },
+    { "name": "RecordData", "length": 20 },
+    { "name": "RecordAmount", "length": 10 },
+    { "name": "FooterRecordCount", "length": 5 },
+    { "name": "FooterSummaryCode", "length": 10 },
+    { "name": "ValidationStatus", "length": 15 }
+  ],
+  "headerConfig": {
+    "fields": [
+      {
+        "name": "BatchID",
+        "sourceXpath": "/transactionBatch/batchHeader/batchId"
+      },
+      {
+        "name": "CreationDate",
+        "sourceXpath": "/transactionBatch/batchHeader/creationDate",
+        "sourceDateFormat": "yyyy-MM-dd'T'HH:mm:ss",
+        "targetDateFormat": "MM/dd/yyyy"
+      },
+      {
+        "name": "SourceSystem",
+        "sourceXpath": "/transactionBatch/batchHeader/sourceSystem"
+      }
+    ]
+  },
+  "bodyConfig": {
+    "baseXpath": "/transactionBatch/records/record",
+    "countFieldAlias": "processedRecordCount",
+    "fields": [
+      {
+        "name": "RecordID",
+        "sourceXpath": "id"
+      },
+      {
+        "name": "RecordData",
+        "sourceXpath": "data"
+      },
+      {
+        "name": "RecordAmount",
+        "sourceXpath": "amount"
+      }
+    ]
+  },
+  "tailConfig": {
+    "fields": [
+      {
+        "name": "FooterRecordCount",
+        "sourceXpath": "/transactionBatch/batchFooter/totalRecords"
+      },
+      {
+        "name": "FooterSummaryCode",
+        "sourceXpath": "/transactionBatch/batchFooter/summaryCode"
+      },
+      {
+        "name": "ValidationStatus",
+        "placeholderValue": "NOT_VALIDATED"
+      }
+    ],
+    "validationConfig": {
+      "countSourceField": "FooterRecordCount",
+      "expectedCountAlias": "processedRecordCount"
+    }
+  }
+}
+
+02:48:53.566 [main] DEBUG com.example.transformation.service.TransformationService - Processing header...
+02:48:53.566 [main] DEBUG com.example.transformation.service.TransformationService - Generating single line. Context node type: DeferredDocumentImpl, Number of specific field definitions: 3
+02:48:53.575 [main] DEBUG com.example.transformation.service.TransformationService - Processing body with baseXpath: /transactionBatch/records/record
+02:48:53.579 [main] DEBUG com.example.transformation.service.TransformationService - Found 3 body elements.
+02:48:53.580 [main] DEBUG com.example.transformation.service.TransformationService - Stored body count 3 with alias 'processedRecordCount'
+02:48:53.580 [main] DEBUG com.example.transformation.service.TransformationService - Generating single line. Context node type: DeferredElementImpl, Number of specific field definitions: 3
+02:48:53.589 [main] DEBUG com.example.transformation.service.TransformationService - Generating single line. Context node type: DeferredElementImpl, Number of specific field definitions: 3
+02:48:53.598 [main] DEBUG com.example.transformation.service.TransformationService - Generating single line. Context node type: DeferredElementImpl, Number of specific field definitions: 3
+02:48:53.608 [main] DEBUG com.example.transformation.service.TransformationService - Processing tail...
+02:48:53.608 [main] DEBUG com.example.transformation.service.TransformationService - Generating single line. Context node type: DeferredDocumentImpl, Number of specific field definitions: 3
+02:48:53.614 [main] WARN com.example.transformation.service.TransformationService - VALIDATION FAILED: Tail count (2 from field 'FooterRecordCount') does not match actual processed body record count (3).
+02:48:53.615 [main] INFO com.example.transformation.service.TransformationService - Flat file generation completed in 57 ms. Header lines: 1, Body lines: 3, Tail lines: 1
+]]></system-out>
+  </testcase>
+  <testcase name="testDirectMapping_Delimited" classname="com.example.transformation.service.TransformationServiceTest" time="0.02"/>
+  <testcase name="testStringOperations_Substring_InvalidIndices" classname="com.example.transformation.service.TransformationServiceTest" time="0.017"/>
+  <testcase name="testFieldSplitting_NotEnoughParts" classname="com.example.transformation.service.TransformationServiceTest" time="0.02">
+    <failure message="expected: &lt;one,two,MISSING&gt; but was: &lt;,,,&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <one,two,MISSING> but was: <,,,>
+	at com.example.transformation.service.TransformationServiceTest.testFieldSplitting_NotEnoughParts(TransformationServiceTest.java:513)
+]]></failure>
+    <system-out><![CDATA[02:48:53.657 [main] INFO com.example.transformation.service.TransformationService - Initializing TransformationService
+02:48:53.659 [main] DEBUG com.example.transformation.service.TransformationService - DocumentBuilderFactory configured for secure parsing.
+02:48:53.659 [main] DEBUG com.example.transformation.service.TransformationService - Attempting to parse XML data. Length: 33
+02:48:53.661 [main] DEBUG com.example.transformation.service.TransformationService - XML data parsed successfully.
+02:48:53.661 [main] INFO com.example.transformation.service.TransformationService - Starting flat file generation process.
+02:48:53.668 [main] DEBUG com.example.transformation.service.TransformationService - Using JSON configuration: {"type": "delimited","delimiter": ",","fields": [  { "name": "FieldA"},  { "name": "FieldB"},  { "name": "FieldC", "placeholderValue": "MISSING"}],"bodyConfig": { "baseXpath": "/root", "fields": [  { "name": "_SplitSource", "sourceXpath": "data",     "splitConfig": { "delimiter": "\\|", "targetFieldNames": ["FieldA", "FieldB", "FieldC"] } },  { "name": "FieldA"},  { "name": "FieldB"},  { "name": "FieldC"}]}}
+02:48:53.669 [main] DEBUG com.example.transformation.service.TransformationService - Processing body with baseXpath: /root
+02:48:53.671 [main] DEBUG com.example.transformation.service.TransformationService - Found 1 body elements.
+02:48:53.671 [main] DEBUG com.example.transformation.service.TransformationService - Generating single line. Context node type: DeferredElementImpl, Number of specific field definitions: 4
+02:48:53.674 [main] INFO com.example.transformation.service.TransformationService - Flat file generation completed in 13 ms. Header lines: 0, Body lines: 1, Tail lines: 0
+]]></system-out>
+  </testcase>
+  <testcase name="testDateFormatting_InvalidSourceDate" classname="com.example.transformation.service.TransformationServiceTest" time="0.016"/>
+  <testcase name="testJsonConfig_EmptyFieldsArrayInBody" classname="com.example.transformation.service.TransformationServiceTest" time="0.009"/>
+  <testcase name="testFieldSplitting_FixedWidthOutput" classname="com.example.transformation.service.TransformationServiceTest" time="0.018">
+    <failure message="expected: &lt;val1 val2 val3 Def  &gt; but was: &lt;                    &gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <val1 val2 val3 Def  > but was: <                    >
+	at com.example.transformation.service.TransformationServiceTest.testFieldSplitting_FixedWidthOutput(TransformationServiceTest.java:489)
+]]></failure>
+    <system-out><![CDATA[02:48:53.703 [main] INFO com.example.transformation.service.TransformationService - Initializing TransformationService
+02:48:53.705 [main] DEBUG com.example.transformation.service.TransformationService - DocumentBuilderFactory configured for secure parsing.
+02:48:53.706 [main] DEBUG com.example.transformation.service.TransformationService - Attempting to parse XML data. Length: 44
+02:48:53.707 [main] DEBUG com.example.transformation.service.TransformationService - XML data parsed successfully.
+02:48:53.707 [main] INFO com.example.transformation.service.TransformationService - Starting flat file generation process.
+02:48:53.714 [main] DEBUG com.example.transformation.service.TransformationService - Using JSON configuration: {"type": "fixed-width","fields": [  { "name": "Output1", "length": 5 },  { "name": "Output2", "length": 5 },  { "name": "Output3", "length": 5 },  { "name": "Output4", "length": 5, "placeholderValue": "Def" }],"bodyConfig": { "baseXpath": "/root", "fields": [  { "name": "_SourceForSplit", "sourceXpath": "values",    "splitConfig": { "delimiter": ":", "targetFieldNames": ["Output1", "Output2", "Output3", "Output4"] } },  { "name": "Output1"},  { "name": "Output2"},  { "name": "Output3"},  { "name": "Output4"}]}}
+02:48:53.714 [main] DEBUG com.example.transformation.service.TransformationService - Processing body with baseXpath: /root
+02:48:53.717 [main] DEBUG com.example.transformation.service.TransformationService - Found 1 body elements.
+02:48:53.717 [main] DEBUG com.example.transformation.service.TransformationService - Generating single line. Context node type: DeferredElementImpl, Number of specific field definitions: 5
+02:48:53.721 [main] INFO com.example.transformation.service.TransformationService - Flat file generation completed in 14 ms. Header lines: 0, Body lines: 1, Tail lines: 0
+]]></system-out>
+  </testcase>
+  <testcase name="testEmptyInputXml" classname="com.example.transformation.service.TransformationServiceTest" time="0.019"/>
+  <testcase name="testStringOperations_ConcatWithNullInitialValue" classname="com.example.transformation.service.TransformationServiceTest" time="0.018"/>
+  <testcase name="testXPathNotResolving_ShouldUsePlaceholder" classname="com.example.transformation.service.TransformationServiceTest" time="0.016"/>
+  <testcase name="testFieldSplitting_DelimitedOutput" classname="com.example.transformation.service.TransformationServiceTest" time="0.02">
+    <failure message="expected: &lt;part1,part2,part3&gt; but was: &lt;,,,,,,,&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <part1,part2,part3> but was: <,,,,,,,>
+	at com.example.transformation.service.TransformationServiceTest.testFieldSplitting_DelimitedOutput(TransformationServiceTest.java:460)
+]]></failure>
+    <system-out><![CDATA[02:48:53.778 [main] INFO com.example.transformation.service.TransformationService - Initializing TransformationService
+02:48:53.779 [main] DEBUG com.example.transformation.service.TransformationService - DocumentBuilderFactory configured for secure parsing.
+02:48:53.780 [main] DEBUG com.example.transformation.service.TransformationService - Attempting to parse XML data. Length: 43
+02:48:53.781 [main] DEBUG com.example.transformation.service.TransformationService - XML data parsed successfully.
+02:48:53.781 [main] INFO com.example.transformation.service.TransformationService - Starting flat file generation process.
+02:48:53.790 [main] DEBUG com.example.transformation.service.TransformationService - Using JSON configuration: {"type": "delimited","delimiter": ",","fields": [  { "name": "FieldA" },  { "name": "FieldB" },  { "name": "FieldC" }],"bodyConfig": { "baseXpath": "/root", "fields": [  { "name": "_DataToSplit", "sourceXpath": "data",     "splitConfig": { "delimiter": "\\|", "targetFieldNames": ["FieldA", "FieldB", "FieldC"] } },  { "name": "FieldA", "placeholderValue":""},  { "name": "FieldB", "placeholderValue":""},  { "name": "FieldA", "placeholderValue":""},  { "name": "FieldB", "placeholderValue":""},  { "name": "FieldA", "placeholderValue":""},  { "name": "FieldB", "placeholderValue":""},  { "name": "FieldC", "placeholderValue":""}]}}
+02:48:53.790 [main] DEBUG com.example.transformation.service.TransformationService - Processing body with baseXpath: /root
+02:48:53.793 [main] DEBUG com.example.transformation.service.TransformationService - Found 1 body elements.
+02:48:53.793 [main] DEBUG com.example.transformation.service.TransformationService - Generating single line. Context node type: DeferredElementImpl, Number of specific field definitions: 8
+02:48:53.796 [main] INFO com.example.transformation.service.TransformationService - Flat file generation completed in 15 ms. Header lines: 0, Body lines: 1, Tail lines: 0
+]]></system-out>
+  </testcase>
+  <testcase name="testDateFormatting_InvalidTargetPattern" classname="com.example.transformation.service.TransformationServiceTest" time="0.022"/>
+  <testcase name="testIterativeProcessing_BodyConfig_Delimited" classname="com.example.transformation.service.TransformationServiceTest" time="0.027"/>
+  <testcase name="testIterativeProcessing_BodyConfig_FixedWidth" classname="com.example.transformation.service.TransformationServiceTest" time="0.025"/>
+  <testcase name="testConditionalMapping_ConditionNotMet_ConstantValue" classname="com.example.transformation.service.TransformationServiceTest" time="0.014"/>
+  <testcase name="testConditionalMapping_ConditionNotMet_UsesSourceXPath" classname="com.example.transformation.service.TransformationServiceTest" time="0.018"/>
+  <testcase name="testJsonConfig_MissingFieldsArrayInBody" classname="com.example.transformation.service.TransformationServiceTest" time="0.011"/>
+  <testcase name="testConditionalMapping_ConditionNotMet_XPathValue" classname="com.example.transformation.service.TransformationServiceTest" time="0.017"/>
+  <testcase name="testNoProcessingConfigsDefined" classname="com.example.transformation.service.TransformationServiceTest" time="0.01"/>
+  <testcase name="testConditionalMapping_ConditionMet_ConstantValue" classname="com.example.transformation.service.TransformationServiceTest" time="0.013"/>
+  <testcase name="testIterativeProcessing_NoItemsFound" classname="com.example.transformation.service.TransformationServiceTest" time="0.013"/>
+  <testcase name="testAbsolutePathInRepeatingElement" classname="com.example.transformation.service.TransformationServiceTest" time="0.025"/>
+  <testcase name="testMalformedXml" classname="com.example.transformation.service.TransformationServiceTest" time="0.006"/>
+  <testcase name="testDateFormatting_ValidConversion" classname="com.example.transformation.service.TransformationServiceTest" time="0.014"/>
+  <testcase name="testStringOperations_Substring_StartIndexGreaterThanEndIndex" classname="com.example.transformation.service.TransformationServiceTest" time="0.013"/>
+  <testcase name="testDirectMapping_FixedWidth" classname="com.example.transformation.service.TransformationServiceTest" time="0.014"/>
+</testsuite>

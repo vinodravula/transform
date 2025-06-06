@@ -1,0 +1,41 @@
+-------------------------------------------------------------------------------
+Test set: com.example.transformation.service.TransformationServiceTest
+-------------------------------------------------------------------------------
+Tests run: 31, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 1.129 s <<< FAILURE! - in com.example.transformation.service.TransformationServiceTest
+testHierarchicalProcessing_ValidCount  Time elapsed: 0.066 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError:
+expected: <BCH001    10/26/2023SystemA
+                    R001    Value for record 1  100.50
+                    R002    Value for record 2  75.00
+                    R003    Another value for re120.25
+                                                3    FINAL     NOT_VALIDATED> but was: <BCH001    10/26/2023SystemA
+                              R001    Value for record 1  100.50
+                              R002    Value for record 2  75.00
+                              R003    Another value for re120.25
+                                                                    3    FINAL     NOT_VALIDATED  >
+	at com.example.transformation.service.TransformationServiceTest.testHierarchicalProcessing_ValidCount(TransformationServiceTest.java:645)
+
+testHierarchicalProcessing_MismatchedCount  Time elapsed: 0.067 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError:
+expected: <BCH001    10/26/2023SystemA
+                    R001    Value for record 1  100.50
+                    R002    Value for record 2  75.00
+                    R003    Another value for re120.25
+                                                2    FINAL     NOT_VALIDATED> but was: <BCH001    10/26/2023SystemA
+                              R001    Value for record 1  100.50
+                              R002    Value for record 2  75.00
+                              R003    Another value for re120.25
+                                                                    2    FINAL     NOT_VALIDATED  >
+	at com.example.transformation.service.TransformationServiceTest.testHierarchicalProcessing_MismatchedCount(TransformationServiceTest.java:672)
+
+testFieldSplitting_NotEnoughParts  Time elapsed: 0.02 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <one,two,MISSING> but was: <,,,>
+	at com.example.transformation.service.TransformationServiceTest.testFieldSplitting_NotEnoughParts(TransformationServiceTest.java:513)
+
+testFieldSplitting_FixedWidthOutput  Time elapsed: 0.018 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <val1 val2 val3 Def  > but was: <                    >
+	at com.example.transformation.service.TransformationServiceTest.testFieldSplitting_FixedWidthOutput(TransformationServiceTest.java:489)
+
+testFieldSplitting_DelimitedOutput  Time elapsed: 0.02 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <part1,part2,part3> but was: <,,,,,,,>
+	at com.example.transformation.service.TransformationServiceTest.testFieldSplitting_DelimitedOutput(TransformationServiceTest.java:460)

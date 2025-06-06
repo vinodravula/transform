@@ -286,10 +286,14 @@ public class TransformationService {
         logger.debug("Generating single line. Context node type: {}, Number of specific field definitions: {}", contextNode.getClass().getSimpleName(), lineSpecificFieldDefs.size());
         Map<String, String> outputLineData = new HashMap<>();
 
-        for (FieldConfig fieldDef : lineSpecificFieldDefs) {
+        // Initialize map with placeholders from the global field definitions (allDefinedFieldsForFormatting)
+        // This ensures all possible output fields have a default value.
+        for (FieldConfig fieldDef : allDefinedFieldsForFormatting) {
             outputLineData.put(fieldDef.getName(), fieldDef.getPlaceholderValue() != null ? fieldDef.getPlaceholderValue() : "");
         }
 
+        // Now, process the fields specific to this line type (header, body, tail)
+        // Their calculated values will overwrite the initial placeholders in outputLineData.
         for (FieldConfig fieldDef : lineSpecificFieldDefs) {
             String initialFieldValue = "";
             // Determine context for XPath: relative paths use contextNode, absolute paths use fullXmlDoc
@@ -410,13 +414,46 @@ public class TransformationService {
                 lineBuilder.append(value);
             }
         } else if ("delimited".equalsIgnoreCase(globalConfig.getType())) {
-            // For delimited, only join values that were actually processed for this line type
-            List<String> relevantOrderedValues = new ArrayList<>();
-            for(FieldConfig lineSpecificDef : lineSpecificFieldDefs){
-                relevantOrderedValues.add(outputLineData.getOrDefault(lineSpecificDef.getName(), ""));
+            // For delimited, iterate through allDefinedFieldsForFormatting to maintain specified order
+            // and include values present in outputLineData.
+            List<String> valuesForDelimitedOutput = new ArrayList<>();
+            for (FieldConfig fmtFieldDef : allDefinedFieldsForFormatting) {
+                // Only include the field if it was intended to be part of this specific line (i.e., it was processed).
+                // A simple check is if its name is in lineSpecificFieldDefs OR if it was a target of a split that got populated.
+                // The most reliable way is to check if outputLineData contains a value for it that isn't just the initial placeholder
+                // if the field wasn't in lineSpecificFieldDefs.
+                // However, simpler: if lineSpecificFieldDefs defines the *set of fields relevant to this line*,
+                // then we should iterate lineSpecificFieldDefs for order and content.
+                // The problem arises when a split target is in allDefinedFieldsForFormatting but not lineSpecificFieldDefs.
+                // The current `outputLineData` initialization with `allDefinedFieldsForFormatting` and then overwriting with `lineSpecificFieldDefs` values
+                // means `outputLineData` holds the complete potential line. We just need to pick the right fields for delimited.
+
+                // Decision: For delimited output, the fields included and their order should strictly come from
+                // the relevant section's field list (lineSpecificFieldDefs).
+                // Split target fields *must* be included in their section's (e.g. bodyConfig.fields) field list
+                // if they are to be outputted in that section.
+                boolean isPartOfThisLineStructure = lineSpecificFieldDefs.stream().anyMatch(lsfd -> lsfd.getName().equals(fmtFieldDef.getName()));
+                if (isPartOfThisLineStructure) {
+                     valuesForDelimitedOutput.add(outputLineData.getOrDefault(fmtFieldDef.getName(), ""));
+                }
+                // This ensures that only fields declared in the specific section (header, body, tail) are outputted for delimited lines.
+                // If a split target is meant for output, it must be declared in that section's fields.
+            }
+            // For delimited, iterate through allDefinedFieldsForFormatting to maintain specified order
+            // and include all intended fields from the outputLineData.
+            List<String> valuesForDelimitedOutput = new ArrayList<>();
+            logger.debug("Assembling delimited line. Number of fields in allDefinedFieldsForFormatting: {}", allDefinedFieldsForFormatting.size());
+            for (FieldConfig fmtFieldDef : allDefinedFieldsForFormatting) {
+                String fieldName = fmtFieldDef.getName();
+                // Using a very distinct default if key is missing to see if that's the issue.
+                String value = outputLineData.getOrDefault(fieldName, "KEY_WAS_MISSING_IN_MAP");
+                valuesForDelimitedOutput.add(value);
+                logger.debug("Delimited assembly: Field='{}', Value='{}'", fieldName, value);
             }
             String delimiter = globalConfig.getDelimiter() != null ? globalConfig.getDelimiter() : ",";
-            lineBuilder.append(String.join(delimiter, relevantOrderedValues));
+            String line = String.join(delimiter, valuesForDelimitedOutput);
+            logger.debug("Final delimited line for context {}: {}", contextNode.getClass().getSimpleName(), line);
+            lineBuilder.append(line);
         } else {
             throw new IllegalArgumentException("Unsupported flat file type: " + globalConfig.getType());
         }

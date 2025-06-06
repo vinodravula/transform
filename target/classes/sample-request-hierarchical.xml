@@ -1,0 +1,28 @@
+<transactionBatch>
+    <batchHeader>
+        <batchId>BCH001</batchId>
+        <creationDate>2023-10-26T10:00:00</creationDate>
+        <sourceSystem>SystemA</sourceSystem>
+    </batchHeader>
+    <records>
+        <record>
+            <id>R001</id>
+            <data>Value for record 1</data>
+            <amount>100.50</amount>
+        </record>
+        <record>
+            <id>R002</id>
+            <data>Value for record 2</data>
+            <amount>75.00</amount>
+        </record>
+        <record>
+            <id>R003</id>
+            <data>Another value for record 3</data>
+            <amount>120.25</amount>
+        </record>
+    </records>
+    <batchFooter>
+        <totalRecords>3</totalRecords> <!-- This count comes from the source XML -->
+        <summaryCode>FINAL</summaryCode>
+    </batchFooter>
+</transactionBatch>

@@ -1,0 +1,70 @@
+{
+  "type": "fixed-width",
+  "fields": [
+    { "name": "BatchID", "length": 10 },
+    { "name": "CreationDate", "length": 10 },
+    { "name": "SourceSystem", "length": 10 },
+    { "name": "RecordID", "length": 8 },
+    { "name": "RecordData", "length": 20 },
+    { "name": "RecordAmount", "length": 10 },
+    { "name": "FooterRecordCount", "length": 5 },
+    { "name": "FooterSummaryCode", "length": 10 },
+    { "name": "ValidationStatus", "length": 15 }
+  ],
+  "headerConfig": {
+    "fields": [
+      {
+        "name": "BatchID",
+        "sourceXpath": "/transactionBatch/batchHeader/batchId"
+      },
+      {
+        "name": "CreationDate",
+        "sourceXpath": "/transactionBatch/batchHeader/creationDate",
+        "sourceDateFormat": "yyyy-MM-dd'T'HH:mm:ss",
+        "targetDateFormat": "MM/dd/yyyy"
+      },
+      {
+        "name": "SourceSystem",
+        "sourceXpath": "/transactionBatch/batchHeader/sourceSystem"
+      }
+    ]
+  },
+  "bodyConfig": {
+    "baseXpath": "/transactionBatch/records/record",
+    "countFieldAlias": "processedRecordCount",
+    "fields": [
+      {
+        "name": "RecordID",
+        "sourceXpath": "id"
+      },
+      {
+        "name": "RecordData",
+        "sourceXpath": "data"
+      },
+      {
+        "name": "RecordAmount",
+        "sourceXpath": "amount"
+      }
+    ]
+  },
+  "tailConfig": {
+    "fields": [
+      {
+        "name": "FooterRecordCount",
+        "sourceXpath": "/transactionBatch/batchFooter/totalRecords"
+      },
+      {
+        "name": "FooterSummaryCode",
+        "sourceXpath": "/transactionBatch/batchFooter/summaryCode"
+      },
+      {
+        "name": "ValidationStatus",
+        "placeholderValue": "NOT_VALIDATED"
+      }
+    ],
+    "validationConfig": {
+      "countSourceField": "FooterRecordCount",
+      "expectedCountAlias": "processedRecordCount"
+    }
+  }
+}

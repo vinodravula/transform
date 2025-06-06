@@ -1,0 +1,13 @@
+com/example/transformation/model/FieldConfig.class
+com/example/transformation/service/TransformationService.class
+com/example/transformation/model/StringOperationConfig.class
+com/example/transformation/model/TailConfig.class
+com/example/transformation/model/BodyConfig.class
+com/example/transformation/config/OpenAPIConfig.class
+com/example/MySpringBootAppApplication.class
+com/example/transformation/controller/GlobalExceptionHandler.class
+com/example/transformation/controller/TransformationController.class
+com/example/transformation/model/ValidationConfig.class
+com/example/transformation/model/SplitConfig.class
+com/example/transformation/model/FlatFileConfig.class
+com/example/transformation/model/HeaderConfig.class
